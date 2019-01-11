@@ -1,0 +1,44 @@
+
+.search-container{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 60px;
+	border-bottom: 1px solid lightgray;
+}
+
+/* Written Logo */
+.insta-logo{
+	width: 100px;
+	padding-left: 7%;
+	border-left: 1px solid lightgray;
+}
+
+/* Text and Icon Logo Container */
+.logo-container{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 2rem;
+	width: 18%;
+}
+
+/* Icons in Header */
+.icons{
+	display: flex;
+	justify-content: space-around;
+	width: 15%;
+	font-size: 1.3rem;
+	color: gray;
+}
+
+.search-bar{
+	background-color: #F9F9F9;
+	border: 1px solid #DEDEDE;
+	border-radius: .25rem;
+	text-align: center;
+	padding: 4px 10px;
+	font-weight: bold;
+}
