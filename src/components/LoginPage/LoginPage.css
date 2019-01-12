@@ -46,3 +46,8 @@
   color: #ffffff;
   font-size: 1.2rem;
 }
+
+.incorrect{
+  color: crimson;
+  font-size: .75rem;
+}

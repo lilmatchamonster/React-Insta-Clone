@@ -9,7 +9,8 @@ class PostContainer extends Component{
 		this.state = {
 			comments: props.comments,
 			newComment: "",
-			likes: this.props.likes
+			likes: this.props.likes,
+			selected: "far fa-heart"
 		}
 	}
 	changeHandler = event => {
@@ -32,13 +33,22 @@ class PostContainer extends Component{
 	}
 	incrementLikes = event =>{
 		let old = this.props.likes;
-		if(this.state.likes = old ){
+
+		if(this.state.likes > old ){
+			this.setState( (prevState) =>{
+				return {likes: prevState.likes - 1}
+			})
+			this.setState((prevState) =>{
+				return {selected: "far fa-heart"}
+			})
+		}
+		else{
 			this.setState( (prevState) =>{
 				return {likes: prevState.likes + 1}
 			})
-		}
-		if(this.state.likes > old ){
-			console.log("nope")
+			this.setState((prevState) =>{
+				return {selected: "fas fa-heart"}
+			})
 		}
   }
 	render(){
@@ -52,7 +62,7 @@ class PostContainer extends Component{
 				<img className="post-img" src={this.props.imageUrl} alt ="Post Image"/>
 
 				<div className="post-text">
-					<p className="like-comment"><i className="far fa-heart" onClick={this.incrementLikes}></i> <i className="far fa-comment"></i></p>
+					<p className="like-comment"><i className={this.state.selected} onClick={this.incrementLikes}></i> <i className="far fa-comment"></i></p>
 					<div className="likes-icon">{this.state.likes} likes</div>
 					<div className="comments-holder">
 						{this.state.comments.map((comment, index) => (

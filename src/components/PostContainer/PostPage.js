@@ -34,7 +34,7 @@ class PostPage extends Component {
           <SearchBar search={this.search}/>
         </header>
         {display.map(post => (
-        <PostContainer key = {post.timestamp} username = {post.username} imageUrl = {post.imageUrl} likes = {post.likes} time={post.timestamp} comments = {post.comments} thumbnailUrl = {post.thumbnailUrl} />
+        <PostContainer key = {post.timestamp} username = {post.username} imageUrl = {post.imageUrl} likes = {post.likes} comments = {post.comments} thumbnailUrl = {post.thumbnailUrl} />
         ))}
       </div>
     );

@@ -9,7 +9,8 @@ class LoginPage extends Component {
       login: {
         username: "",
         password: ""
-      }
+      },
+      statement: ""
     }
   }
   
@@ -36,7 +37,9 @@ class LoginPage extends Component {
       console.log("Congratulations!!");
     }
     else{
-
+      this.setState({
+        statement: "Invalid username or password. Please try again."
+      })
       console.log("Invalid input");
     }
 
@@ -51,6 +54,7 @@ class LoginPage extends Component {
         <input type="password" placeholder="Password" name="password" onChange={this.handleUserInput} value={this.state.login.password}/>
         <button type="submit" className="sub-button">Log in</button>
       </form>
+      <p className="incorrect">{this.state.statement}</p>
       </div>
     );
   }
